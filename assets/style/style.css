@@ -1,0 +1,188 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Вертикальная ориентация */
+    height: 100vh;
+    background-color: #282c34;
+    /* Фоновый цвет */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #490d1d;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.navbar li {
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: #43c8fd;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.magic-button {
+    background-color: #43c8fd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.magic-button:hover {
+    background-color: #36a3d5;
+}
+
+
+.root {
+    background-color: #490d1d;
+    padding: 20px 10px;
+    width: 100%;
+    /* Ширина контейнера */
+    max-width: 800px;
+    /* Максимальная ширина контейнера */
+    text-align: center;
+    /* Центрирование текста внутри корневого контейнера */
+}
+
+.shiny-title {
+    font-size: 48px;
+    color: #43c8fd;
+    position: relative;
+    margin-bottom: 20px;
+    /* Отступ снизу */
+}
+
+.magic-text {
+    display: none;
+    /* Скрываем текст по умолчанию */
+    font-size: 24px;
+    /* Размер шрифта для текста "магия" */
+    color: white;
+    /* Цвет текста "магия" */
+    margin-left: 10px;
+    /* Отступ слева для текста "магия" */
+}
+
+.shiny-title:hover .magic-text {
+    display: inline;
+    /* Показываем текст при наведении */
+}
+
+.list {
+    display: flex;
+    /* Используем flexbox */
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на следующую строку */
+    gap: 20px;
+    /* Расстояние между карточками */
+    justify-content: center;
+    /* Центрирование карточек */
+}
+
+.card {
+    perspective: 1000px;
+    /* Добавляем перспективу для 3D эффекта */
+    width: 200px;
+    /* Устанавливаем фиксированную ширину карточки */
+    height: 300px;
+    /* Устанавливаем фиксированную высоту карточки */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    /* Плавный переход при перевороте */
+    transform-style: preserve-3d;
+    /* Сохраняем 3D стиль */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Скрываем заднюю сторону при просмотре фронта */
+    border-radius: 20px;
+    /* Закругляем углы */
+}
+
+.card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* Вертикальная ориентация элементов карточки */
+    align-items: center;
+    /* Центрирование элементов внутри карточки */
+    justify-content: center;
+    /* Центрирование элементов по вертикали */
+    padding: 10px;
+    /* Внутренний отступ */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Тень для карточек */
+}
+
+.card-back {
+    background-color: #f39c12;
+    /* Цвет задней стороны карточки */
+    color: white;
+    /* Цвет текста на задней стороне */
+    display: flex;
+    justify-content: center;
+    /* Центрирование текста */
+    align-items: center;
+    /* Центрирование текста по вертикали */
+    text-align: center;
+    /* Выравнивание текста по центру */
+    transform: rotateY(180deg);
+    /* Поворачиваем заднюю сторону на 180 градусов */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+    /* Поворачиваем карточку при наведении */
+}
+
+.sub {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    /* Отступ для заголовков карточек */
+    font-size: 24px;
+    /* Размер шрифта для заголовков карточек */
+}
+
+.img {
+    width: 100%;
+    /* Устанавливаем ширину изображения на 100% */
+    height: 80%;
+    /* Устанавливаем высоту изображения на 80% */
+    object-fit: cover;
+    /* Обеспечиваем правильное обрезание изображения */
+}
